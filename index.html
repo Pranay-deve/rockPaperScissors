@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <script>
+        //player choice
+    var playerSelection = prompt("What is your choice of weapon: rock, paper, or scissors?");
+    
+    //Computer Choice
+    var computerSelection = Math.ceil(Math.random() *3);
+    
+    //variables as numbers
+    if (computerSelection < 1) {
+        computerSelection = "rock";
+    } else if(1 <= computerSelection <= 2) {
+        computerSelection = "paper";
+    } else {
+        computerSelection = "scissors";
+    }
+    
+    
+    //defining function
+    function game(playerSelection, computerSelection){
+    
+    //Checking for a tie
+    if (playerSelection === computerSelection) {
+          return "It is a tie";
+        }
+    
+        //Check for Rock
+        if (playerSelection === "rock") {
+          if (computerSelection === "scissors") {
+            return "Player Wins";
+          } else {
+            return "Computer Wins";
+          }
+        }
+        //Check for Paper
+        if (playerSelection === "paper") {
+          if (computerSelection === "scissors") {
+            return "Computer Wins";
+          } else {
+            return "Player Wins";
+          }
+        }
+        //Check for Scissors
+        if (playerSelection === "scissors") {
+          if (computerSelection === "rock") {
+            return "Computer Wins";
+          } else {
+            return "Player Wins";
+          }
+        }
+    }
+    
+    //start the game function
+    game();
+    //print winner
+    console.log(game(playerSelection, computerSelection))
+    </script>
+</body>
+</html>
